@@ -1,4 +1,4 @@
-package org.example;
+package org.example.task2;
 
 public class Employee {
     public Integer getAge() {

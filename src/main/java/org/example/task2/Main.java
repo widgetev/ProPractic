@@ -1,4 +1,4 @@
-package org.example;
+package org.example.task2;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -14,6 +14,7 @@ public class Main {
             ,new Employee(45,"Савелий", "Директор")
             ,new Employee(79,"Сережа", "Просто живет тут")
             ,new Employee(50,"Галя", "Бухгалтер")
+            ,new Employee(5,"Матроскин", "Кот")
             ,new Employee(51,"Тимофей ", "Повар")
             ,new Employee(50,"Василиса", "Кладовщик"));
 
@@ -27,9 +28,26 @@ public class Main {
     ,"Ампер Сочиться Влиять Подстрекательство Навербовать"};
 
     public static void main(String[] args) {
-        System.out.println("\n========================== 01");
         Integer[] intArr = {5, 2, 25, 10,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9, 9, 4, 3, 10, 1, 13};
-        System.out.println(Stream.of(intArr).distinct().collect(Collectors.toList()));
+
+        System.out.println("\n========================== 01");
+        System.out.println(Stream.of(intArr)
+                .distinct()
+                .collect(Collectors.toList()));
+
+        intArr = new Integer[]{5, 2, 10, 9, 4, 3, 10, 1, 13}; //Чтобы с условиями совападло
+        System.out.println("\n========================== 02");
+        System.out.println(Stream.of(intArr)
+                .sorted(Comparator.reverseOrder())
+                .skip(2).limit(1).toList()
+        );
+
+        System.out.println("\n========================== 03");
+        System.out.println(Stream.of(intArr)
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .skip(2).limit(1).toList()
+        );
 
 
         System.out.println("\n========================== 04");

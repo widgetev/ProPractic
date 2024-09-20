@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task2/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task2/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,11 +55,11 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <option name="MAIN_CLASS_NAME" value="org.example.task2.Main" />
       <module name="Main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.task2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726804260884</updated>
-      <workItem from="1726804261718" duration="9979000" />
+      <workItem from="1726804261718" duration="10982000" />
     </task>
     <servers />
   </component>
