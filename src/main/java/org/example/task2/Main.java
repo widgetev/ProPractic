@@ -39,32 +39,32 @@ public class Main {
         System.out.println("\n========================== 02");
         System.out.println(Stream.of(intArr)
                 .sorted(Comparator.reverseOrder())
-                .skip(2).limit(1).toList()
+                .skip(2).findFirst().orElseThrow()//.limit(1).toList()
         );
 
         System.out.println("\n========================== 03");
         System.out.println(Stream.of(intArr)
                 .distinct()
                 .sorted(Comparator.reverseOrder())
-                .skip(2).limit(1).toList()
+                .skip(2).findFirst().orElseThrow() //.limit(1).toList()
         );
 
 
         System.out.println("\n========================== 04");
         employes.stream()
-                .filter(i -> i.function=="Инженер")
+                .filter(i -> i.function.equals("Инженер"))
                 .sorted((a,b) -> b.age.compareTo(a.age))
                 .limit(3)
                 .forEach(System.out::println);
 
         System.out.println("\n========================== 05");
         System.out.println(employes.stream()
-                .filter(i -> i.function=="Инженер")
+                .filter(i -> i.function.equals("Инженер"))
                 .collect(Collectors.averagingDouble(Employee::getAge)));
 
         System.out.println("\n========================== 06");
         System.out.println(words.stream()
-                .max((a,b) ->  Integer.valueOf(a.length()).compareTo(b.length())).orElse(""));
+                .max(Comparator.comparingInt(String::length)).orElse(""));
 
         System.out.println("\n========================== 07");
         System.out.println(
@@ -83,6 +83,5 @@ public class Main {
                 .flatMap(line -> Arrays.stream(line.split("\s")))
                 .max(Comparator.comparing(String::length))
                 .orElse(""));
-        ;
     }
 }
