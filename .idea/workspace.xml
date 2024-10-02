@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 3">
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 3. Лишний файл">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_3/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_3/ThreadPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_3/ThreadPool.java" afterDir="false" />
     </list>
@@ -129,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1727873204170</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Задача 3. Добавлен метод awaitTermination()">
+      <created>1727879071020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727879071021</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Задача 3. Лишний файл">
+      <created>1727879155641</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727879155641</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +169,8 @@
     <MESSAGE value="По замечаниям с ревью + warning от IDEA" />
     <MESSAGE value="Init branch Task_3" />
     <MESSAGE value="Задача 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 3" />
+    <MESSAGE value="Задача 3. Добавлен метод awaitTermination()" />
+    <MESSAGE value="Задача 3. Лишний файл" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 3. Лишний файл" />
   </component>
 </project>

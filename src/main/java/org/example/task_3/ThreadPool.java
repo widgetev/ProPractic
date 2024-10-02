@@ -1,20 +1,26 @@
 package org.example.task_3;
 
+import jdk.jfr.StackTrace;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ThreadPool {
 
-    private POOL_STATUS status;
+    private final AtomicBoolean isActive;
     /**
      * Внутри пула очередь задач на исполнение организуется через LinkedList<Runnable>.
      */
-    private Queue<Runnable> tasks = new LinkedList<>();
-
-    private List<Thread> threads = new ArrayList<>();
+    private final Queue<Runnable> tasks = new LinkedList<>();
+    private final List<Thread> threads = new ArrayList<>();
     private final CountDownLatch countDownLatch;
 
     public void awaitTermination() throws InterruptedException {
+        System.out.println("awaiting");
         countDownLatch.await();
     }
 
@@ -24,15 +30,17 @@ public class ThreadPool {
      *      и как только появится свободный поток – должна быть выполнена
      */
     public void execute(Runnable runnabler, int i){
-        if (this.status==POOL_STATUS.TERMINATED) {
-            throw new IllegalStateException("Pool in TERMINATED state");
-        }
-        if (this.status==POOL_STATUS.ACTIVE) {
-            System.out.println("Add new task " + i);
-            synchronized (tasks) {
-                this.tasks.offer(runnabler);
+
+            if (!this.isActive.get()) {
+                throw new IllegalStateException("Pool in TERMINATED state");
             }
+        System.out.println("Add new task " + i);
+        synchronized (tasks) {
+            this.tasks.offer(runnabler);
+            //System.out.println("notify");
+            tasks.notifyAll(); //вино-водочный прислал заявки!
         }
+
     };
 
     /**
@@ -42,7 +50,7 @@ public class ThreadPool {
      * @param
      */
     public void shutdown(){
-        this.status=POOL_STATUS.TERMINATED;
+        this.isActive.set(false); //без всяких compareAndSet. Гасим в любом случае
         System.out.println("pool shutdown");
     }
 
@@ -51,7 +59,7 @@ public class ThreadPool {
      * @param capacity - емкость пула (количество рабочих потоков).
      */
     private ThreadPool(int capacity) {
-        this.status=POOL_STATUS.ACTIVE;
+        this.isActive = new AtomicBoolean(true);
         countDownLatch = new CountDownLatch(capacity);
         //Создать заданное кол-во потоков
         for (int i = 0; i < capacity ; i++) {
@@ -62,14 +70,21 @@ public class ThreadPool {
                          task = tasks.poll();
                     }
 
-                    if (task != null) {
+                    if (task != null) { //если задача есть - работаем
                         //System.out.println(countDownLatch.getCount());
                         task.run();
                     }
-                    else if (status==POOL_STATUS.TERMINATED) {
+                    else if (!this.isActive.get()) { //если задачи нет и TERMINATED - уволен
                         countDownLatch.countDown();
-                        //System.out.println(countDownLatch.getCount());
                         break;
+                    } else { // иначе - перекур
+                        synchronized (tasks) {
+                            try {
+                                tasks.wait();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
                 }
             }, "Thread_" + i);
@@ -78,8 +93,7 @@ public class ThreadPool {
         }
     }
 
-    public static ThreadPool of(int capacity) {
-        ThreadPool pool = new ThreadPool(capacity);
-        return pool;
+    public static @NotNull ThreadPool of(int capacity) {
+        return new ThreadPool(capacity);
     }
 }

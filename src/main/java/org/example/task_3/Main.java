@@ -12,7 +12,7 @@ public class Main {
             myPool.execute(()-> {
                 System.out.println("Task " + finalI + " run in " + currentThread().getName());
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -20,14 +20,20 @@ public class Main {
         }
         myPool.shutdown();
         myPool.awaitTermination();
-        //Thread.sleep(500);
+        //Thread.sleep(5000);
 
         for (int i = step1; i < step1*2; i++) {
             int finalI = i;
             myPool.execute(()-> {
                 System.out.println("Task " + finalI + " run in " + currentThread().getName());
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }, i);
         }
+
     }
 
 }
