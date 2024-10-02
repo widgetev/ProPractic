@@ -1,6 +1,7 @@
 package org.example.task_3;
 
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
 
 public class ThreadPool {
 
@@ -11,6 +12,12 @@ public class ThreadPool {
     private Queue<Runnable> tasks = new LinkedList<>();
 
     private List<Thread> threads = new ArrayList<>();
+    private final CountDownLatch countDownLatch;
+
+    public void awaitTermination() throws InterruptedException {
+        countDownLatch.await();
+    }
+
     /**
      * При выполнении у пула потоков метода execute(Runnabler)
      * @param runnabler - указанная задача должна попасть в очередь исполнения,
@@ -45,6 +52,7 @@ public class ThreadPool {
      */
     private ThreadPool(int capacity) {
         this.status=POOL_STATUS.ACTIVE;
+        countDownLatch = new CountDownLatch(capacity);
         //Создать заданное кол-во потоков
         for (int i = 0; i < capacity ; i++) {
             Thread thread = new Thread(() -> {
@@ -54,9 +62,13 @@ public class ThreadPool {
                          task = tasks.poll();
                     }
 
-                    if (task != null)
+                    if (task != null) {
+                        //System.out.println(countDownLatch.getCount());
                         task.run();
+                    }
                     else if (status==POOL_STATUS.TERMINATED) {
+                        countDownLatch.countDown();
+                        //System.out.println(countDownLatch.getCount());
                         break;
                     }
                 }

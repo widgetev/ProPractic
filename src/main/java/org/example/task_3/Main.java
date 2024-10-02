@@ -11,9 +11,15 @@ public class Main {
             int finalI = i;
             myPool.execute(()-> {
                 System.out.println("Task " + finalI + " run in " + currentThread().getName());
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }, i);
         }
         myPool.shutdown();
+        myPool.awaitTermination();
         //Thread.sleep(500);
 
         for (int i = step1; i < step1*2; i++) {
