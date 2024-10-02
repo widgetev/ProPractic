@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="По замечаниям с ревью">
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Init branch Task_3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_3/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_3/ThreadPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -52,7 +59,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.org.example.task_3.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.task2.Main" />
       <module name="Main" />
@@ -66,8 +73,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="org.example.task_3.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.task_3.Main" />
+      <module name="Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.task_3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.example.task_3.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -81,8 +102,26 @@
       <option name="presentableId" value="Default" />
       <updated>1726804260884</updated>
       <workItem from="1726804261718" duration="11585000" />
-      <workItem from="1727081234415" duration="1259000" />
+      <workItem from="1727081234415" duration="3995000" />
+      <workItem from="1727408354609" duration="7844000" />
     </task>
+    <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
+      <option name="closed" value="true" />
+      <created>1727143554410</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727143554410</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Init branch Task_3">
+      <option name="closed" value="true" />
+      <created>1727167489767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727167489767</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +132,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="По замечаниям с ревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="По замечаниям с ревью" />
+    <MESSAGE value="По замечаниям с ревью + warning от IDEA" />
+    <MESSAGE value="Init branch Task_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init branch Task_3" />
   </component>
 </project>
