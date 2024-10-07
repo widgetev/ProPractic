@@ -10,12 +10,12 @@ import java.util.List;
 
 @Component
 public class ConnectionPool {
-    List<Connection> connectionList= new ArrayList<>();;
-    private final DataSource dataSource;
+    List<Connection> connectionList= new ArrayList<>(); //Пулл подразумевает несколько соединений. Но я с одинм поработаю
+    private static DataSource dataSource;
 
-    public ConnectionPool(DataSource dataSource) throws ClassNotFoundException, SQLException {
-        this.dataSource =dataSource;
-        this.connectionList.add(dataSource.getConnection());
+    public ConnectionPool(DataSource dataSource) throws SQLException {
+        ConnectionPool.dataSource =dataSource;
+        connectionList.add(dataSource.getConnection());
     }
 
     public Connection get() {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Users {
 
-    private long id;
+    private Long id;
 
     public Users(String username) {
         this.username = username;

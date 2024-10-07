@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 3. Учтены замечания с кодревью">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ConnectionPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 4. Первые наброски">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "database.query.execution",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -154,7 +153,7 @@
       <workItem from="1727081234415" duration="3995000" />
       <workItem from="1727408354609" duration="7844000" />
       <workItem from="1727988404025" duration="46000" />
-      <workItem from="1728034710916" duration="18882000" />
+      <workItem from="1728034710916" duration="31604000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -200,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1727901362134</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Задача 4. Первые наброски">
+      <created>1728115991005</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728115991005</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Задача 4. Первые наброски">
+      <created>1728116012966</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728116012966</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +241,7 @@
     <MESSAGE value="Задача 3. Добавлен метод awaitTermination()" />
     <MESSAGE value="Задача 3. Лишний файл" />
     <MESSAGE value="Задача 3. Учтены замечания с кодревью" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 3. Учтены замечания с кодревью" />
+    <MESSAGE value="Задача 4. Первые наброски" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 4. Первые наброски" />
   </component>
 </project>
