@@ -1,0 +1,15 @@
+C:\Users\ЕвгенийК\.jdks\liberica-full-17.0.11\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2022.1.2\lib\idea_rt.jar=61376:C:\Program Files\JetBrains\IntelliJ IDEA 2022.1.2\bin" -Dfile.encoding=UTF-8 -classpath C:\MyDocuments\IdeaProjects\JavaPro\Task_2\target\classes;C:\Users\ЕвгенийК\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\ЕвгенийК\.m2\repository\org\postgresql\postgresql\42.7.4\postgresql-42.7.4.jar;C:\Users\ЕвгенийК\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\ЕвгенийК\.m2\repository\org\projectlombok\lombok\1.18.22\lombok-1.18.22.jar;C:\Users\ЕвгенийК\.m2\repository\org\springframework\spring-context\6.1.13\spring-context-6.1.13.jar;C:\Users\ЕвгенийК\.m2\repository\org\springframework\spring-aop\6.1.13\spring-aop-6.1.13.jar;C:\Users\ЕвгенийК\.m2\repository\org\springframework\spring-beans\6.1.13\spring-beans-6.1.13.jar;C:\Users\ЕвгенийК\.m2\repository\org\springframework\spring-core\6.1.13\spring-core-6.1.13.jar;C:\Users\ЕвгенийК\.m2\repository\org\springframework\spring-jcl\6.1.13\spring-jcl-6.1.13.jar;C:\Users\ЕвгенийК\.m2\repository\org\springframework\spring-expression\6.1.13\spring-expression-6.1.13.jar;C:\Users\ЕвгенийК\.m2\repository\io\micrometer\micrometer-observation\1.12.10\micrometer-observation-1.12.10.jar;C:\Users\ЕвгенийК\.m2\repository\io\micrometer\micrometer-commons\1.12.10\micrometer-commons-1.12.10.jar;C:\Users\ЕвгенийК\.m2\repository\com\zaxxer\HikariCP\6.0.0\HikariCP-6.0.0.jar;C:\Users\ЕвгенийК\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar org.example.task_4.Main
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+=======================================
+[Users{id=3, username='Vasya'}, Users{id=4, username='Vasya1980'}, Users{id=5, username='sadfadsfsq'}, Users{id=25, username='sadfadsfsq1990'}, Users{id=30, username='Vasya2'}, Users{id=31, username='Vasya1986'}]
+
+=======================================
+Users{id=31, username='Vasya1986'}
+
+=======================================
+[Users{id=3, username='Vasya'}, Users{id=4, username='Vasya1980'}, Users{id=5, username='sadfadsfsq'}, Users{id=25, username='sadfadsfsq1990'}]
+
+Process finished with exit code 0
