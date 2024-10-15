@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 4. Исправления по замечаниям кодревью">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 5. Добавлены классы работы с продуктами">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728116012966</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Задача 5. Добавлены классы работы с продуктами">
+      <created>1728985251001</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728985251001</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +244,7 @@
     <MESSAGE value="Задача 3. Лишний файл" />
     <MESSAGE value="Задача 3. Учтены замечания с кодревью" />
     <MESSAGE value="Задача 4. Первые наброски" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 4. Первые наброски" />
+    <MESSAGE value="Задача 5. Добавлены классы работы с продуктами" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 5. Добавлены классы работы с продуктами" />
   </component>
 </project>

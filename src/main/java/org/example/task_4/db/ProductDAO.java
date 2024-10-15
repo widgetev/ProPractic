@@ -53,7 +53,7 @@ public class ProductDAO {
             ResultSet rs = stmt.executeQuery("SELECT * FROM products where id=" + id);
             if(rs.next()) {
                 product = new Products(rs.getString("accnum")
-                        , rs.getDouble("sum")
+                        , rs.getBigDecimal("sum")
                         , ProductType.valueOf(rs.getString("type")));
                 product.setId((long) rs.getInt("id"));
             }
@@ -67,10 +67,10 @@ public class ProductDAO {
     public List<Products> getAll() {
         List<Products> productList = new ArrayList<>();
         try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT * FROM products ");
+            ResultSet rs = stmt.executeQuery("SELECT id, accnum, sum::numeric, type FROM products ");
             while (rs.next()) {
                 Products product = new Products(rs.getString("accnum")
-                        , rs.getDouble("sum")
+                        , rs.getBigDecimal("sum")
                         , ProductType.valueOf(rs.getString("type")));
                 product.setId((long) rs.getInt("id"));
                 productList.add(product);

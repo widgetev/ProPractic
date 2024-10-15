@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Setter @Getter
 
 @NoArgsConstructor
@@ -15,10 +17,10 @@ public class Products {
 
     private Long id;
     private String accNum;
-    private double sum;
+    private BigDecimal sum;
     private ProductType type;
 
-    public Products(String accNum, double sum, ProductType type) {
+    public Products(String accNum, BigDecimal sum, ProductType type) {
         this.accNum = accNum;
         this.sum = sum;
         this.type = type;

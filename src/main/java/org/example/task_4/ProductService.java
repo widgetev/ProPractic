@@ -3,6 +3,7 @@ package org.example.task_4;
 import org.example.task_4.db.*;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -14,7 +15,7 @@ public class ProductService {
         this.productDAO = productDAO;
     }
 
-    Products create(String accnum, Double sum, ProductType type) {
+    Products create(String accnum, BigDecimal sum, ProductType type) {
         Products products = new Products(accnum, sum, type);
         productDAO.save(products);
         return products;
