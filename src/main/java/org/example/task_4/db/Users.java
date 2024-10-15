@@ -11,13 +11,11 @@ import org.springframework.stereotype.Component;
 public class Users {
 
     private Long id;
+    private String username;
 
     public Users(String username) {
         this.username = username;
     }
-
-    private String username;
-
     @Override
     public String toString() {
         return "Users{" +

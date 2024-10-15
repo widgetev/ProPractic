@@ -1,6 +1,8 @@
 
 package org.example.task_4;
 
+import org.example.task_4.db.ProductType;
+import org.example.task_4.db.Products;
 import org.example.task_4.db.Users;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,10 +13,13 @@ import java.sql.*;
 @ComponentScan
 public class Main {
         static UserService userService;
+        static ProductService productService;
     public static void main(String[] args) throws SQLException {
         AnnotationConfigApplicationContext context =new AnnotationConfigApplicationContext(Main.class);
 
+
         userService = context.getBean(UserService.class);
+        productService = context.getBean(ProductService.class);
         System.out.println("\n=======================================");
         Users vasya = userService.create("Vasya2");
         Users vasya2 = userService.create("Vasya1986");
@@ -31,6 +36,10 @@ public class Main {
 
         System.out.println(userService.getAll());
 
+
+        System.out.println("\n\n\n=======================================");
+        Products acc1 = productService.create("408178100999999", 0.0, ProductType.ACC);
+        Products acc2 = productService.create("2201000000000000 ", 999999.9, ProductType.CARD);
 
     }
 

@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 4. Вроде все как надо.">
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 4. Исправления по замечаниям кодревью">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ConnectionPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -84,6 +89,7 @@
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.example.task_4" />
+      <recent name="org.example.task_4.db" />
     </key>
   </component>
   <component name="RunManager" selected="Application.org.example.task_4.Main">
