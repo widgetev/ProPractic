@@ -1,6 +1,5 @@
 package org.example.task_4.db;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
@@ -16,10 +15,8 @@ import javax.sql.DataSource;
 public class UserDAO {
     private final Connection connection;
 
-
     public UserDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-//        initDatabase(connection);
     }
 
     public Users get(Long id ){
@@ -55,7 +52,6 @@ public class UserDAO {
 
     public void save(Users e) {
         try (Statement stmt = connection.createStatement()) {
-            //не рассматриваю когда ID есть, а имени нету
             if (e.getId() == null) {
                 ResultSet rs = stmt.executeQuery("SELECT * FROM users where username='" + e.getUsername() + "'");
                 if (!rs.next()) {
@@ -77,22 +73,11 @@ public class UserDAO {
         }
     }
 
-
     public void delete(Users e) {
         try (Statement stmt = connection.createStatement()) {
             stmt.executeUpdate("DELETE FROM users WHERE username = '" + e.getUsername() + "'", Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-    }
-
-
-    public static void initDatabase(Connection connection) throws SQLException {
-        try (ResultSet tables = connection.getMetaData().getTables(null, null, "users", new String[] { "TABLE" })) {
-            if(!tables.next()) {
-                connection.createStatement().execute("CREATE TABLE users (id bigserial PRIMARY KEY, username varchar(255) unique);");
-            }
-        }
-
     }
 }

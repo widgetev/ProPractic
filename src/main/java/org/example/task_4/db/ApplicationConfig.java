@@ -2,16 +2,12 @@ package org.example.task_4.db;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import lombok.Setter;
 import org.flywaydb.core.Flyway;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
-@Setter
+
 @Configuration
 public class ApplicationConfig {
 
@@ -41,6 +37,7 @@ public class ApplicationConfig {
                 .dataSource(dataSource())
                 .locations("classpath:db/migration")
                 .load();
+        flyway.repair();
         flyway.migrate();
         return flyway;
     }

@@ -11,7 +11,6 @@ import java.util.List;
 @EqualsAndHashCode
 @Component
 public class Users {
-
     private Long id;
     private String username;
     private List<Products> products;

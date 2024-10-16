@@ -1,6 +1,5 @@
 package org.example.task_4.db;
 
-import org.example.task_4.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -18,11 +17,10 @@ public class ProductDAO {
     private static final Logger log = LoggerFactory.getLogger(ProductDAO.class.getName());
     private final Connection connection;
     private static final String SQL_SELECT_ALL = "SELECT id, accnum, sum::numeric, type, userid  FROM products";
+
     public ProductDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-        //initDatabase(connection);
     }
-
 
     public void save(Products products) {
         try (Statement stmt = connection.createStatement()) {
@@ -52,7 +50,6 @@ public class ProductDAO {
         }
     }
 
-
     public Products get(Long id ){
         Products product = null;
         try (Statement stmt = connection.createStatement()) {
@@ -66,7 +63,6 @@ public class ProductDAO {
         }
         return product;
     }
-
     private Products getOneProduct(ResultSet rs) throws SQLException {
         Products pr = new Products((long) rs.getInt("id"), rs.getString("accnum")
                 , rs.getBigDecimal("sum")
@@ -92,7 +88,6 @@ public class ProductDAO {
     }
 
     public List<Products> getByUserId(Long userId) {
-
         return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId);
     }
 
@@ -100,22 +95,11 @@ public class ProductDAO {
         return getAllBySQL(SQL_SELECT_ALL);
     }
 
-
     public void delete(Products e) {
         try (Statement stmt = connection.createStatement()) {
             stmt.executeUpdate("DELETE FROM products WHERE accnum = '" + e.getAccNum() + "'", Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-    }
-
-
-    public static void initDatabase(Connection connection) throws SQLException {
-        try (ResultSet tables = connection.getMetaData().getTables(null, null, "products", new String[] { "TABLE" })) {
-            if(!tables.next()) {
-                connection.createStatement().execute("CREATE TABLE products (id bigserial PRIMARY KEY, accnum varchar(25) unique, sum money, type varchar(4));");
-            }
-        }
-
     }
 }
