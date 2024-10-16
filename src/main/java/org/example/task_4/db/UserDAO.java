@@ -1,5 +1,6 @@
 package org.example.task_4.db;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
@@ -14,9 +15,11 @@ import javax.sql.DataSource;
 @Component
 public class UserDAO {
     private final Connection connection;
+
+
     public UserDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-        initDatabase(connection);
+        //initDatabase(connection);
     }
 
     public Users get(Long id ){

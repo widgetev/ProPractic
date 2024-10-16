@@ -15,7 +15,7 @@ public class ProductDAO {
     private final Connection connection;
     public ProductDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-        initDatabase(connection);
+        //initDatabase(connection);
     }
 
 
@@ -50,7 +50,7 @@ public class ProductDAO {
     public Products get(Long id ){
         Products product = null;
         try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT * FROM products where id=" + id);
+            ResultSet rs = stmt.executeQuery("SELECT id, accnum, sum::numeric, type FROM products where id=" + id);
             if(rs.next()) {
                 product = new Products(rs.getString("accnum")
                         , rs.getBigDecimal("sum")
@@ -62,6 +62,24 @@ public class ProductDAO {
             ex.printStackTrace();
         }
         return product;
+    }
+
+    public List<Products> getByUserId(Long userId) {
+        List<Products> productList = new ArrayList<>();
+        try (Statement stmt = connection.createStatement()) {
+            ResultSet rs = stmt.executeQuery("SELECT id, accnum, sum::numeric, type FROM products where userId = " + userId);
+            while (rs.next()) {
+                Products product = new Products(rs.getString("accnum")
+                        , rs.getBigDecimal("sum")
+                        , ProductType.valueOf(rs.getString("type")));
+                product.setId((long) rs.getInt("id"));
+                productList.add(product);
+            }
+            rs.close();
+        }catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return productList;
     }
 
     public List<Products> getAll() {

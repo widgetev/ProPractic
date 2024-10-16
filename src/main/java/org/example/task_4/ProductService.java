@@ -20,15 +20,22 @@ public class ProductService {
         productDAO.save(products);
         return products;
     }
-
-    void del(Products user) {
-        productDAO.delete(user);
+    Products create(String accnum, BigDecimal sum, ProductType type, Long userId) {
+        Products products = new Products(accnum, sum, type, userId);
+        productDAO.save(products);
+        return products;
     }
 
-    Products get(Long id) {
+    void del(Products p) {
+        productDAO.delete(p);
+    }
+
+    public Products get(Long id) {
         return productDAO.get(id);
     }
-
+    public List<Products> getByUserId(Long id) {
+        return productDAO.getByUserId(id);
+    }
     List<Products> getAll() {
         return productDAO.getAll();
     }

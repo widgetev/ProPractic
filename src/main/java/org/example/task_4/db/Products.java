@@ -19,11 +19,17 @@ public class Products {
     private String accNum;
     private BigDecimal sum;
     private ProductType type;
-
+    private Long userId;
     public Products(String accNum, BigDecimal sum, ProductType type) {
         this.accNum = accNum;
         this.sum = sum;
         this.type = type;
+    }
+    public Products(String accNum, BigDecimal sum, ProductType type, Long userId) {
+        this.accNum = accNum;
+        this.sum = sum;
+        this.type = type;
+        this.userId = userId;
     }
 
     @Override
@@ -33,6 +39,7 @@ public class Products {
                 ", accNum='" + accNum + '\'' +
                 ", sum=" + sum +
                 ", type=" + type +
+                ", userId=" + userId +
                 '}';
     }
 }
