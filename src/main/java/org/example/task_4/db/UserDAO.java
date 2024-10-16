@@ -19,7 +19,7 @@ public class UserDAO {
 
     public UserDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
-        //initDatabase(connection);
+//        initDatabase(connection);
     }
 
     public Users get(Long id ){

@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 5. Добавлены классы работы с продуктами">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 5. application.yml и Flyway не завелись">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +160,7 @@
       <workItem from="1727408354609" duration="7844000" />
       <workItem from="1727988404025" duration="46000" />
       <workItem from="1728034710916" duration="31604000" />
-      <workItem from="1729081046215" duration="3221000" />
+      <workItem from="1729081046215" duration="8588000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -239,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728988533435</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Задача 5. application.yml и Flyway не завелись">
+      <created>1729084633097</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729084633097</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +271,8 @@
     <MESSAGE value="Задача 3. Учтены замечания с кодревью" />
     <MESSAGE value="Задача 4. Первые наброски" />
     <MESSAGE value="Задача 5. Добавлены классы работы с продуктами" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 5. Добавлены классы работы с продуктами" />
+    <MESSAGE value="Задача 5. application.yml и Flyway не завелись" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 5. application.yml и Flyway не завелись" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

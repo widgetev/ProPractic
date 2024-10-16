@@ -1,6 +1,9 @@
 package org.example.task_4;
 
+import org.example.task_4.controller.ProductsController;
 import org.example.task_4.db.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -8,7 +11,7 @@ import java.util.List;
 
 @Service
 public class ProductService {
-
+    private static final Logger log = LoggerFactory.getLogger(ProductService.class.getName());
     private final ProductDAO productDAO;
 
     public ProductService(ProductDAO productDAO) {
@@ -34,9 +37,10 @@ public class ProductService {
         return productDAO.get(id);
     }
     public List<Products> getByUserId(Long id) {
+        log.info( "Call getByUserId id = " + id);
         return productDAO.getByUserId(id);
     }
-    List<Products> getAll() {
+    public List<Products> getAll() {
         return productDAO.getAll();
     }
 }

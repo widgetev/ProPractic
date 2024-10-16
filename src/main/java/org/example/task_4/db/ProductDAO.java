@@ -1,5 +1,8 @@
 package org.example.task_4.db;
 
+import org.example.task_4.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -12,7 +15,9 @@ import java.util.List;
 
 @Component
 public class ProductDAO {
+    private static final Logger log = LoggerFactory.getLogger(ProductDAO.class.getName());
     private final Connection connection;
+    private static final String SQL_SELECT_ALL = "SELECT id, accnum, sum::numeric, type, userid  FROM products";
     public ProductDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
         //initDatabase(connection);
@@ -26,9 +31,10 @@ public class ProductDAO {
                 //ResultSet rs = stmt.executeQuery("SELECT * FROM products where username='" + e.getUsername() + "'");
                 ResultSet rs = stmt.executeQuery("SELECT * FROM products where accnum='" + products.getAccNum() + "'");
                 if (!rs.next()) {
-                    stmt.executeUpdate("INSERT INTO products (accnum, sum, type) VALUES ('" + products.getAccNum() +
+                    stmt.executeUpdate("INSERT INTO products (accnum, sum, type, userid) VALUES ('" + products.getAccNum() +
                             "', " + products.getSum() +
-                            ", '"+ products.getType() + "' )", Statement.RETURN_GENERATED_KEYS);
+                            ", '"+ products.getType() + "'"+
+                            ", " + products.getUserId() + " )", Statement.RETURN_GENERATED_KEYS);
                     ResultSet generatedKeysResultSet = stmt.getGeneratedKeys();
                     generatedKeysResultSet.next();
                     products.setId((long) generatedKeysResultSet.getInt("id"));
@@ -50,12 +56,9 @@ public class ProductDAO {
     public Products get(Long id ){
         Products product = null;
         try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT id, accnum, sum::numeric, type FROM products where id=" + id);
+            ResultSet rs = stmt.executeQuery(SQL_SELECT_ALL +" where id=" + id);
             if(rs.next()) {
-                product = new Products(rs.getString("accnum")
-                        , rs.getBigDecimal("sum")
-                        , ProductType.valueOf(rs.getString("type")));
-                product.setId((long) rs.getInt("id"));
+                product = getOneProduct(rs);
             }
             rs.close();
         }catch (SQLException ex) {
@@ -64,16 +67,22 @@ public class ProductDAO {
         return product;
     }
 
-    public List<Products> getByUserId(Long userId) {
+    private Products getOneProduct(ResultSet rs) throws SQLException {
+        Products pr = new Products((long) rs.getInt("id"), rs.getString("accnum")
+                , rs.getBigDecimal("sum")
+                , ProductType.valueOf(rs.getString("type"))
+                , rs.getLong("userid"));
+        return pr;
+
+    }
+
+    public List<Products> getAllBySQL(String sql) {
+        log.info("Call getAllBySQL SQL = " + sql);
         List<Products> productList = new ArrayList<>();
         try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT id, accnum, sum::numeric, type FROM products where userId = " + userId);
-            while (rs.next()) {
-                Products product = new Products(rs.getString("accnum")
-                        , rs.getBigDecimal("sum")
-                        , ProductType.valueOf(rs.getString("type")));
-                product.setId((long) rs.getInt("id"));
-                productList.add(product);
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {;
+                productList.add( getOneProduct(rs));
             }
             rs.close();
         }catch (SQLException ex) {
@@ -82,22 +91,13 @@ public class ProductDAO {
         return productList;
     }
 
+    public List<Products> getByUserId(Long userId) {
+
+        return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId);
+    }
+
     public List<Products> getAll() {
-        List<Products> productList = new ArrayList<>();
-        try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery("SELECT id, accnum, sum::numeric, type FROM products ");
-            while (rs.next()) {
-                Products product = new Products(rs.getString("accnum")
-                        , rs.getBigDecimal("sum")
-                        , ProductType.valueOf(rs.getString("type")));
-                product.setId((long) rs.getInt("id"));
-                productList.add(product);
-            }
-            rs.close();
-        }catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-        return productList;
+        return getAllBySQL(SQL_SELECT_ALL);
     }
 
 

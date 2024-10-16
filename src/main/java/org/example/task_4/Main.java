@@ -22,6 +22,8 @@ public class Main {
         static UserService userService;
         static ProductService productService;
     public static void main(String[] args) throws SQLException {
+        SpringApplication.run(Main.class,args);
+
         AnnotationConfigApplicationContext context =new AnnotationConfigApplicationContext(Main.class);
         userService = context.getBean(UserService.class);
         productService = context.getBean(ProductService.class);
@@ -31,12 +33,11 @@ public class Main {
 
 
         System.out.println("\n\n\n=======================================");
-        for (int i = 0; i < 5; i++) {
-            productService.create("4081781010000010000" + i, BigDecimal.valueOf(0.0), ProductType.ACC);
+        for (int i = 0; i < 3; i++) {
+            productService.create("4081781010000010000" + i, BigDecimal.valueOf(0.0), ProductType.ACC, 2L);
+            productService.create("220100000000000" + i, BigDecimal.valueOf(999999.9), ProductType.CARD, (long) i);
         }
-        productService.create("2201000000000000 ", BigDecimal.valueOf(999999.9), ProductType.CARD);
-        productService.create("2201000000000001 ", BigDecimal.valueOf(999999.9), ProductType.CARD);
-        productService.create("2201000000000002 ", BigDecimal.valueOf(999999.9), ProductType.CARD);
+
         productService.create("2201000000000003 ", BigDecimal.valueOf(999999.9), ProductType.CARD);
         productService.create("2201000000000004 ", BigDecimal.valueOf(999999.9), ProductType.CARD);
 
@@ -45,7 +46,6 @@ public class Main {
         System.out.println("\n=======================================");
 
 
-        SpringApplication.run(Main.class,args);
 
     }
 
