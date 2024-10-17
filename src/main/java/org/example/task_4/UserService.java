@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class UserService {
 
-    UserDAO userDAO;
+    private final UserDAO userDAO;
 
     public UserService(UserDAO userDAO) {
         this.userDAO = userDAO;
@@ -29,7 +29,7 @@ public class UserService {
         return userDAO.get(id);
     }
 
-    List<Users> getAll() {
+    public List<Users> getAll() {
         return userDAO.getAll();
     }
 }
