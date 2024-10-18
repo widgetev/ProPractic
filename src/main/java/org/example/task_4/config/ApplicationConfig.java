@@ -1,4 +1,4 @@
-package org.example.task_4.db;
+package org.example.task_4.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
