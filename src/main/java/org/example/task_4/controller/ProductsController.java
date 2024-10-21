@@ -1,6 +1,6 @@
 package org.example.task_4.controller;
 
-import org.example.task_4.ProductService;
+import org.example.task_4.service.ProductService;
 import org.example.task_4.db.Products;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
