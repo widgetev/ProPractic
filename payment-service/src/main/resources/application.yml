@@ -14,4 +14,6 @@ server:
 
 
 service:
-  products.url: "http://localhost:8126/product/"
+  products :
+    url: "http://localhost:8126/product/"
+    byuser.url: "http://localhost:8126/product/user/{id}"
