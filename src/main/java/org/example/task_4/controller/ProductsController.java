@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductsController {
     private static final Logger log = LoggerFactory.getLogger(ProductsController.class.getName());
     private final ProductService productService;
