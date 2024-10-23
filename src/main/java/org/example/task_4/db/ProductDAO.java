@@ -90,6 +90,12 @@ public class ProductDAO {
     public List<Products> getByUserId(Long userId) {
         return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId);
     }
+    public List<Products> getByAccNum(Long userId, String accnum) {
+        return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId + " and accnum = '" + accnum + "'");
+    }
+    public Products getByProductIdUserId(Long pid, Long userId) {
+        return getAllBySQL(SQL_SELECT_ALL + " where id = "+ pid + " and userId = " + userId).get(0);
+    }
 
     public List<Products> getAll() {
         return getAllBySQL(SQL_SELECT_ALL);

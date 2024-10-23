@@ -1,32 +1,41 @@
 package org.example.config;
 
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.example.properties.ProductsUrl;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-@Configuration
 @Getter
-//@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "service.integrations.payment-service")
 public class PaymentConfig {
-    private final PaymentURL paymentsUrl;
 
-    public PaymentConfig(@Value("${service.products.url}") String paymentsUrl) {
-        this.paymentsUrl = new PaymentURL(paymentsUrl);
+    private final ProductsUrl productsUrl ;
+
+    public PaymentConfig(ProductsUrl productsUrl) {
+        this.productsUrl = productsUrl;
     }
 
     @Bean
     public RestTemplate restTemplate(){
-        return new RestTemplate();
+        return new RestTemplateBuilder()
+                .rootUri(productsUrl.getBase())
+                .build();
     }
 
-    class PaymentURL{
-        private final String value;
-
-        public PaymentURL(String value) {
-            this.value = value;
-        }
+    public String getProductsByUserURL() {
+        return productsUrl.getUser();
     }
+
+    public String getURLProductBypPidUid() {
+        return productsUrl.getPid()
+                + productsUrl.getUser();
+    }
+    public String getProductByUidAccnum() {
+        return productsUrl.getUser()
+                + productsUrl.getAccnum();
+    }
+
 }

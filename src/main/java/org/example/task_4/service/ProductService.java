@@ -39,6 +39,16 @@ public class ProductService {
         log.info( "Call getByUserId id = " + id);
         return productDAO.getByUserId(id);
     }
+    public List<Products> getByAccnum(Long uid, String accnum) {
+        log.info( "Call getByAccNum = " + accnum);
+        return productDAO.getByAccNum(uid, accnum);
+    }
+
+    public Products getByProductIdUserId(Long pid, Long uid) {
+        log.info( "Call getByUserId id = " + uid);
+        return productDAO.getByProductIdUserId(pid,uid);
+    }
+
     public List<Products> getAll() {
         return productDAO.getAll();
     }

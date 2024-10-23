@@ -14,6 +14,10 @@ server:
 
 
 service:
-  products :
-    url: "http://localhost:8126/product/"
-    byuser.url: "http://localhost:8126/product/user/{id}"
+  integrations:
+    payment-service:
+      products-url:
+        base: "http://localhost:8126/product"
+        pid: "/{pid}"
+        user: "/user/{uid}"
+        accnum: "/accnum/{accnum}"

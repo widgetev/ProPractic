@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. Заработала интеграция сервисов">
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. запрос продуктов по пользователю">
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +100,7 @@
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.properties" />
       <recent name="org.example.task_4.controller" />
       <recent name="org.example.task_4" />
       <recent name="org.example.task_4.db" />
@@ -197,7 +203,7 @@
       <workItem from="1728034710916" duration="31604000" />
       <workItem from="1729081046215" duration="10612000" />
       <workItem from="1729100138521" duration="1048000" />
-      <workItem from="1729505009961" duration="17217000" />
+      <workItem from="1729505009961" duration="36586000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -327,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729589645624</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Задача 6. запрос продуктов по пользователю">
+      <created>1729596666774</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729596666774</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,7 +378,8 @@
     <MESSAGE value="Задача 6. update project state" />
     <MESSAGE value="Задача 6. рефакторинг пакетов" />
     <MESSAGE value="Задача 6. Заработала интеграция сервисов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. Заработала интеграция сервисов" />
+    <MESSAGE value="Задача 6. запрос продуктов по пользователю" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. запрос продуктов по пользователю" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
