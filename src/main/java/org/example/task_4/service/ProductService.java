@@ -1,5 +1,6 @@
 package org.example.task_4.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.example.task_4.db.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -33,23 +35,29 @@ public class ProductService {
     }
 
     public Products get(Long id) {
-        return productDAO.get(id);
+        return Optional.ofNullable(productDAO.get(id)).orElseThrow(EntityNotFoundException::new);
     }
     public List<Products> getByUserId(Long id) {
         log.info( "Call getByUserId id = " + id);
-        return productDAO.getByUserId(id);
+        return wrpapList(productDAO.getByUserId(id));
     }
     public List<Products> getByAccnum(Long uid, String accnum) {
         log.info( "Call getByAccNum = " + accnum);
-        return productDAO.getByAccNum(uid, accnum);
+        return wrpapList(productDAO.getByAccNum(uid, accnum));
     }
 
     public Products getByProductIdUserId(Long pid, Long uid) {
         log.info( "Call getByUserId id = " + uid);
-        return productDAO.getByProductIdUserId(pid,uid);
+        return Optional.ofNullable(productDAO.getByProductIdUserId(pid,uid)).orElseThrow(EntityNotFoundException::new);
     }
 
     public List<Products> getAll() {
-        return productDAO.getAll();
+        return wrpapList(productDAO.getAll());
+    }
+
+    List<Products> wrpapList(List<Products> productsList){
+        return Optional.ofNullable(productsList)
+                .filter(a -> !a.isEmpty())
+                .orElseThrow(EntityNotFoundException::new);
     }
 }

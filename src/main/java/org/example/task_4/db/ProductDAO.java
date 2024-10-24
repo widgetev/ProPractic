@@ -5,12 +5,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ProductDAO {
@@ -78,7 +80,7 @@ public class ProductDAO {
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {;
-                productList.add( getOneProduct(rs));
+                productList.add(getOneProduct(rs));
             }
             rs.close();
         }catch (SQLException ex) {
@@ -94,7 +96,10 @@ public class ProductDAO {
         return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId + " and accnum = '" + accnum + "'");
     }
     public Products getByProductIdUserId(Long pid, Long userId) {
-        return getAllBySQL(SQL_SELECT_ALL + " where id = "+ pid + " and userId = " + userId).get(0);
+        List<Products> productsList = getAllBySQL(SQL_SELECT_ALL + " where id = "+ pid + " and userId = " + userId);
+        if(productsList.size()>0)
+            return productsList.get(0);
+        return null;
     }
 
     public List<Products> getAll() {

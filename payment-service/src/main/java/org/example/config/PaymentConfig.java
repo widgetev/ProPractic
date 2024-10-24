@@ -5,7 +5,6 @@ import org.example.properties.ProductsUrl;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Getter
@@ -19,9 +18,10 @@ public class PaymentConfig {
     }
 
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate(RestTemplateResponseErrorHandler restTemplateResponseErrorHandler){
         return new RestTemplateBuilder()
                 .rootUri(productsUrl.getBase())
+                .errorHandler(restTemplateResponseErrorHandler)
                 .build();
     }
 
