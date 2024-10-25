@@ -4,20 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. rootUri для restTemplate ну и прочее">
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/RestTemplateResponseErrorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/ControllerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/Exception5xxDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/IntegrationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/dto/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/dto/ProductsResponse.java" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. сервис Product возврат моей структуры">
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/PaymentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/PaymentResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/PaymentParamException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/ProductNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/RequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/ControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/ControllerAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/dto/ProductsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/dto/ProductsResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +77,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/MyDocuments/IdeaProjects/JavaPro/Task_2/payment-service/src/main/resources",
+    "last_opened_file_path": "C:/MyDocuments/IdeaProjects/JavaPro/Task_2/src/main/resources/db/migration",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,17 +101,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main\resources\db\migration" />
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\payment-service\src\main\resources" />
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\payment-service\dev\docker\wiremock\wiremock\stubs\__files" />
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main\resources" />
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main\java\org\example\task_4" />
-      <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main\resources\db\migration" />
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main" />
     </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="org.example.dto" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.exception" />
       <recent name="org.example.properties" />
       <recent name="org.example.task_4.controller" />
       <recent name="org.example.task_4" />
@@ -115,7 +129,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="Spring Boot.Main (1)">
     <configuration name="org.example.task_4.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.task_4.Main" />
       <module name="poduct-service" />
@@ -179,8 +193,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="Spring Boot.Main (1)" />
+        <item itemvalue="Spring Boot.Main" />
         <item itemvalue="Docker.wiremock: Compose Deployment" />
         <item itemvalue="Docker.wiremock.wiremock-setup-core: Compose Deployment" />
         <item itemvalue="Application.org.example.task_4.Main" />
@@ -207,7 +221,7 @@
       <workItem from="1729100138521" duration="1048000" />
       <workItem from="1729505009961" duration="47799000" />
       <workItem from="1729774968627" duration="1028000" />
-      <workItem from="1729777266066" duration="7145000" />
+      <workItem from="1729777266066" duration="29313000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -351,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729707922048</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Задача 6. сервис Product возврат моей структуры">
+      <created>1729793153612</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1729793153612</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +412,8 @@
     <MESSAGE value="Задача 6. Заработала интеграция сервисов" />
     <MESSAGE value="Задача 6. запрос продуктов по пользователю" />
     <MESSAGE value="Задача 6. rootUri для restTemplate ну и прочее" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. rootUri для restTemplate ну и прочее" />
+    <MESSAGE value="Задача 6. сервис Product возврат моей структуры" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. сервис Product возврат моей структуры" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

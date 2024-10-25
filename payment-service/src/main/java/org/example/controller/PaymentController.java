@@ -1,40 +1,56 @@
 package org.example.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
 import org.example.config.PaymentConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.example.dto.PaymentDTO;
+import org.example.dto.PaymentResponse;
+import org.example.service.ProductService;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import org.example.service.PaymentService;
-
+@Slf4j
 @RestController
 @RequestMapping("/payments")
 public class PaymentController {
-    //private static final Logger log = LoggerFactory.getLogger(PaymentController.class.getName());
-    private final PaymentConfig config;
 
     private final PaymentService paymentService;
-    public PaymentController(PaymentService paymentService, PaymentConfig config) {
+    private final ProductService productService;
+    public PaymentController(PaymentService paymentService, ProductService productService) {
         this.paymentService = paymentService;
-        this.config = config;
+        this.productService = productService;
     }
 
+    /**
+     * Эти методы нужны чтобы "запрашивать продукты у платежного сервиса" в разных вариациях :
+     * getUserProducts - все продукты пользователя
+     * getProductByIdUIserId(pid, uid) - по id продукта и id пользователя
+     * getProductByIdUIserId(uid, AccNum) - по id пользователя и номеру счета/карты
+     */
     @GetMapping("/user/{userId}/products")
-    public String getUserProducts(@PathVariable Long userId){
-        return paymentService.getProductByUser(config.getProductsByUserURL(),userId);
+    public PaymentResponse getUserProducts(@PathVariable Long userId) throws JsonProcessingException {
+        PaymentResponse response= productService.getProductByUser(userId);
+        return response;
     }
 
-     //Выбор продукта. Т.е. ищем конкретный продукт по конкретному пользователю
+    //Выбор продукта. Т.е. ищем конкретный продукт по конкретному пользователю
     //это же запрос проверить наличие такого продукта?
     @GetMapping("/product/{pid}/user/{uid}")
-    public String getProductByIdUIserId(@PathVariable Long pid, @PathVariable Long uid){
-        return paymentService.getProductBypPidUid(config.getURLProductBypPidUid(),pid,uid);
+    public PaymentResponse getProductByIdUIserId(@PathVariable Long pid, @PathVariable Long uid){
+        return productService.getProductBypPidUid(pid,uid);
+        //return new PaymentResponse(HttpStatus.OK.name(), "",paymentService.getProductBypPidUid(pid,uid));
     }
     //это же запрос проверить наличие такого продукта
     @GetMapping("/product/user/{uid}/accnum/{accnum}")
-    public String getProductByIdUIserId(@PathVariable Long uid, @PathVariable String accnum){
-        return paymentService.getProductByUidAccnum(config.getProductByUidAccnum(),uid, accnum);
+    public PaymentResponse getProductByIdUIserId(@PathVariable Long uid, @PathVariable String accnum){
+        return productService.getProductByUidAccnum(uid, accnum);
+    }
+
+    /**
+     * Это метод оплаты
+     */
+    @PostMapping("/")
+    public PaymentResponse doPayment(@RequestBody PaymentDTO payment) {
+        return paymentService.doPayment(payment);
     }
 }

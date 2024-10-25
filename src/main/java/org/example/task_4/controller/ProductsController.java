@@ -2,17 +2,14 @@ package org.example.task_4.controller;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
+import org.example.task_4.db.Product;
 import org.example.task_4.db.dto.ErrorResponse;
 import org.example.task_4.db.dto.ProductsResponse;
 import org.example.task_4.service.ProductService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -53,9 +50,17 @@ public class ProductsController {
         return new ProductsResponse(List.of(productService.getByProductIdUserId(pid, uid)));
 
     }
+
+    @PostMapping(value = "/")
+    public ProductsResponse updateProduct(@RequestBody Product product) throws SQLException {
+        log.info("update Product = " + product);
+        return new ProductsResponse(List.of(productService.update(product)));
+
+    }
+
     @ExceptionHandler(EntityNotFoundException.class)
     public ErrorResponse handlerEntityNotFoundException(EntityNotFoundException e){
-        return  new ErrorResponse(HttpStatus.NOT_FOUND.name(), "Почему-то не нашлось");
+        return  new ErrorResponse(HttpStatus.NOT_FOUND.name(), "Продукт не найден");
     }
 
 }

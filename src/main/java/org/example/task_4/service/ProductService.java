@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,43 +20,47 @@ public class ProductService {
         this.productDAO = productDAO;
     }
 
-    Products create(String accnum, BigDecimal sum, ProductType type) {
-        Products products = new Products(accnum, sum, type);
-        productDAO.save(products);
-        return products;
+    Product create(String accnum, BigDecimal sum, ProductType type) {
+        Product product = new Product(accnum, sum, type);
+        productDAO.save(product);
+        return product;
     }
-    Products create(String accnum, BigDecimal sum, ProductType type, Long userId) {
-        Products products = new Products(accnum, sum, type, userId);
-        productDAO.save(products);
-        return products;
+    Product create(String accnum, BigDecimal sum, ProductType type, Long userId) {
+        Product product = new Product(accnum, sum, type, userId);
+        productDAO.save(product);
+        return product;
     }
 
-    void del(Products p) {
+    void del(Product p) {
         productDAO.delete(p);
     }
 
-    public Products get(Long id) {
+    public Product get(Long id) {
         return Optional.ofNullable(productDAO.get(id)).orElseThrow(EntityNotFoundException::new);
     }
-    public List<Products> getByUserId(Long id) {
+    public List<Product> getByUserId(Long id) {
         log.info( "Call getByUserId id = " + id);
-        return wrpapList(productDAO.getByUserId(id));
+        return wrapList(productDAO.getByUserId(id));
     }
-    public List<Products> getByAccnum(Long uid, String accnum) {
+    public List<Product> getByAccnum(Long uid, String accnum) {
         log.info( "Call getByAccNum = " + accnum);
-        return wrpapList(productDAO.getByAccNum(uid, accnum));
+        return wrapList(productDAO.getByAccNum(uid, accnum));
     }
 
-    public Products getByProductIdUserId(Long pid, Long uid) {
+    public Product getByProductIdUserId(Long pid, Long uid) {
         log.info( "Call getByUserId id = " + uid);
         return Optional.ofNullable(productDAO.getByProductIdUserId(pid,uid)).orElseThrow(EntityNotFoundException::new);
     }
-
-    public List<Products> getAll() {
-        return wrpapList(productDAO.getAll());
+    public List<Product> getAll() {
+        return wrapList(productDAO.getAll());
     }
 
-    List<Products> wrpapList(List<Products> productsList){
+    public Product update(Product product) throws SQLException {
+        log.info( "update Product : {}  ", product);
+        return Optional.ofNullable(productDAO.update(product)).orElseThrow(EntityNotFoundException::new);
+    }
+
+    List<Product> wrapList(List<Product> productsList){
         return Optional.ofNullable(productsList)
                 .filter(a -> !a.isEmpty())
                 .orElseThrow(EntityNotFoundException::new);

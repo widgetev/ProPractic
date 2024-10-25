@@ -13,7 +13,7 @@ import java.util.List;
 public class Users {
     private Long id;
     private String username;
-    private List<Products> products;
+    private List<Product> products;
     public Users(String username) {
         this.username = username;
     }

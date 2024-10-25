@@ -25,6 +25,7 @@ public class PaymentConfig {
                 .build();
     }
 
+    public String getUpdateURL() {return productsUrl.getUpdate();};
     public String getProductsByUserURL() {
         return productsUrl.getUser();
     }

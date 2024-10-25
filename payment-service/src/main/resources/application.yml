@@ -21,3 +21,4 @@ service:
         pid: "/{pid}"
         user: "/user/{uid}"
         accnum: "/accnum/{accnum}"
+        update: "/"

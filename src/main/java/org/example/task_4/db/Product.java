@@ -11,19 +11,19 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Component
-public class Products {
+public class Product {
 
     private Long id;
     private String accNum;
     private BigDecimal sum;
     private ProductType type;
     private Long userId;
-    public Products(String accNum, BigDecimal sum, ProductType type) {
+    public Product(String accNum, BigDecimal sum, ProductType type) {
         this.accNum = accNum;
         this.sum = sum;
         this.type = type;
     }
-    public Products(String accNum, BigDecimal sum, ProductType type, Long userId) {
+    public Product(String accNum, BigDecimal sum, ProductType type, Long userId) {
         this.accNum = accNum;
         this.sum = sum;
         this.type = type;

@@ -1,59 +1,50 @@
 package org.example.service;
 
-import org.jetbrains.annotations.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
+import org.example.dto.PaymentDTO;
+import org.example.dto.PaymentResponse;
+import org.example.dto.Product;
+import org.example.exception.PaymentParamException;
+import org.example.exception.ProductNotFoundException;
+import org.example.exception.RequestException;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
+import java.math.BigDecimal;
+import java.util.*;
 
+/**
+ * Выполняет платеж. При необходимости обращается к продуктовому сервису
+ */
+@Slf4j
 @Service
 public class PaymentService {
-    private static final Logger log = LoggerFactory.getLogger(PaymentService.class.getName());
-    private final RestTemplate restTemplate;
-    public PaymentService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+
+    private final ProductService productService;
+
+    public PaymentService(ProductService productService) {
+        this.productService = productService;
     }
 
-    public String getProductByUser(String paymentsUrl, @PathVariable Long userId) {
-        //подготовить параметр
-        Map<String, String> urlParams = new HashMap<>();
-        urlParams.put("uid", userId.toString());
+    public PaymentResponse doPayment(PaymentDTO payment) {
+        if(payment.userId()==null || (payment.productId()==null && payment.accNum() == null) || payment.sum() == null)
+            throw new PaymentParamException("Не верные параметры платежа");
 
-        //Сформировать uri
-        return execPostRequest(paymentsUrl, urlParams);
-    }
+        List<Product> productsList = this.productService.getProductBypPidUid(payment.productId(), payment.userId()).getProductsList();
+        if(productsList == null || productsList.size() != 1)
+            throw new ProductNotFoundException("Product not found");
 
-    public String getProductBypPidUid(String paymentsUrl, @PathVariable Long pid, @PathVariable Long uid) {
+        Product product = productsList.get(0);
+        BigDecimal balance = product.getSum();
 
-        //подготовить параметр
-        Map<String, String> urlParams = new HashMap<>();
-        urlParams.put("pid", pid.toString());
-        urlParams.put("uid", uid.toString());
+        if(Objects.isNull(balance) || balance.compareTo(payment.sum()) < 0) {
+            throw new RequestException(HttpStatus.BAD_REQUEST, "Low balance");
+        }
 
-        return execPostRequest(paymentsUrl, urlParams);
-    }
-    public String getProductByUidAccnum(String paymentsUrl, @PathVariable Long uid, @PathVariable String accnum) {
+        product.setSum(balance.subtract(payment.sum()));
 
-        //подготовить параметр
-        Map<String, String> urlParams = new HashMap<>();
-        urlParams.put("uid", uid.toString());
-        urlParams.put("accnum", accnum);
+        this.productService.updateProduct(product);
 
-        return execPostRequest(paymentsUrl, urlParams);
-    }
-
-    @Nullable
-    private String execPostRequest(String paymentsUrl, Map<String, String> urlParams) {
-        //Сформировать uri
-        String uri = UriComponentsBuilder.fromUriString(paymentsUrl)
-                .buildAndExpand(urlParams).toString();
-        log.info("request for {}", uri);
-        return restTemplate.postForObject(uri, null, String.class);
+        return new PaymentResponse(List.of(product));
     }
 }
