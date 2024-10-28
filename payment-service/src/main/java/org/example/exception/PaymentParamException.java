@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class PaymentParamException extends RuntimeException{
-    String message;
+    private final String message;
     public PaymentParamException(String message) {
         super(message);
         this.message = message;

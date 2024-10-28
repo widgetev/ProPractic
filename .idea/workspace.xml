@@ -4,30 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. сервис Product возврат моей структуры">
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/PaymentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/PaymentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/dto/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/PaymentParamException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/ProductNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/RequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/ProductService.java" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/ControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/ControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/controller/ProductsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/dto/ProductsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/dto/ProductsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/PaymentParamException.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/PaymentParamException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/ProductNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/ProductNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/RequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/RequestException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +202,7 @@
       <workItem from="1729100138521" duration="1048000" />
       <workItem from="1729505009961" duration="47799000" />
       <workItem from="1729774968627" duration="1028000" />
-      <workItem from="1729777266066" duration="29313000" />
+      <workItem from="1729777266066" duration="31256000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -372,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729793153612</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс">
+      <created>1729861736591</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729861736591</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +401,8 @@
     <MESSAGE value="Задача 6. запрос продуктов по пользователю" />
     <MESSAGE value="Задача 6. rootUri для restTemplate ну и прочее" />
     <MESSAGE value="Задача 6. сервис Product возврат моей структуры" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. сервис Product возврат моей структуры" />
+    <MESSAGE value="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
