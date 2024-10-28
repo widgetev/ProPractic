@@ -1,4 +1,4 @@
-package org.example.task_4;
+package org.example.task_4.service;
 
 import org.example.task_4.db.UserDAO;
 import org.example.task_4.db.Users;

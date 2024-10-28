@@ -22,23 +22,23 @@ public class ProductDAO {
         this.connection = dataSource.getConnection();
     }
 
-    public void save(Products products) {
+    public void save(Product product) {
         try (Statement stmt = connection.createStatement()) {
             //не рассматриваю когда ID есть, а имени нету
-            if (products.getId() == null) {
+            if (product.getId() == null) {
                 //ResultSet rs = stmt.executeQuery("SELECT * FROM products where username='" + e.getUsername() + "'");
-                ResultSet rs = stmt.executeQuery("SELECT * FROM products where accnum='" + products.getAccNum() + "'");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM products where accnum='" + product.getAccNum() + "'");
                 if (!rs.next()) {
-                    stmt.executeUpdate("INSERT INTO products (accnum, sum, type, userid) VALUES ('" + products.getAccNum() +
-                            "', " + products.getSum() +
-                            ", '"+ products.getType() + "'"+
-                            ", " + products.getUserId() + " )", Statement.RETURN_GENERATED_KEYS);
+                    stmt.executeUpdate("INSERT INTO products (accnum, sum, type, userid) VALUES ('" + product.getAccNum() +
+                            "', " + product.getSum() +
+                            ", '"+ product.getType() + "'"+
+                            ", " + product.getUserId() + " )", Statement.RETURN_GENERATED_KEYS);
                     ResultSet generatedKeysResultSet = stmt.getGeneratedKeys();
                     generatedKeysResultSet.next();
-                    products.setId((long) generatedKeysResultSet.getInt("id"));
+                    product.setId((long) generatedKeysResultSet.getInt("id"));
                 } else {//next() в if уже сделан. В БД уже не надо лезть
                     //такой user уже есть, впишу ID и оставлю как есть
-                    products.setId((long) rs.getInt("id"));
+                    product.setId((long) rs.getInt("id"));
                 }
                 rs.close();
             } else {
@@ -50,8 +50,8 @@ public class ProductDAO {
         }
     }
 
-    public Products get(Long id ){
-        Products product = null;
+    public Product get(Long id ){
+        Product product = null;
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(SQL_SELECT_ALL +" where id=" + id);
             if(rs.next()) {
@@ -63,8 +63,8 @@ public class ProductDAO {
         }
         return product;
     }
-    private Products getOneProduct(ResultSet rs) throws SQLException {
-        Products pr = new Products((long) rs.getInt("id"), rs.getString("accnum")
+    private Product getOneProduct(ResultSet rs) throws SQLException {
+        Product pr = new Product((long) rs.getInt("id"), rs.getString("accnum")
                 , rs.getBigDecimal("sum")
                 , ProductType.valueOf(rs.getString("type"))
                 , rs.getLong("userid"));
@@ -72,13 +72,13 @@ public class ProductDAO {
 
     }
 
-    public List<Products> getAllBySQL(String sql) {
+    public List<Product> getAllBySQL(String sql) {
         log.info("Call getAllBySQL SQL = " + sql);
-        List<Products> productList = new ArrayList<>();
+        List<Product> productList = new ArrayList<>();
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {;
-                productList.add( getOneProduct(rs));
+                productList.add(getOneProduct(rs));
             }
             rs.close();
         }catch (SQLException ex) {
@@ -87,15 +87,35 @@ public class ProductDAO {
         return productList;
     }
 
-    public List<Products> getByUserId(Long userId) {
+    public List<Product> getByUserId(Long userId) {
         return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId);
     }
+    public List<Product> getByAccNum(Long userId, String accnum) {
+        return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId + " and accnum = '" + accnum + "'");
+    }
+    public Product getByProductIdUserId(Long pid, Long userId) {
+        List<Product> productsList = getAllBySQL(SQL_SELECT_ALL + " where id = "+ pid + " and userId = " + userId);
+        if(productsList.size()>0)
+            return productsList.get(0);
+        return null;
+    }
 
-    public List<Products> getAll() {
+    public List<Product> getAll() {
         return getAllBySQL(SQL_SELECT_ALL);
     }
 
-    public void delete(Products e) {
+    //Обновить можно только остаток. Для всего остального - создавай новый счет
+    public Product update(Product product) throws SQLException {
+        try (Statement stmt = connection.createStatement()) {
+            stmt.executeUpdate("UPDATE products set sum = " + product.getSum() + " where id = " + product.getId(), Statement.RETURN_GENERATED_KEYS);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            throw new SQLException(ex);
+        }
+        return product;
+    }
+
+    public void delete(Product e) {
         try (Statement stmt = connection.createStatement()) {
             stmt.executeUpdate("DELETE FROM products WHERE accnum = '" + e.getAccNum() + "'", Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException ex) {
