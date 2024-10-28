@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс">
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/PaymentParamException.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/PaymentParamException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/ProductNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/ProductNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/RequestException.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/exception/RequestException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/ProductsUrl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,40 +45,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/MyDocuments/IdeaProjects/JavaPro/Task_2/src/main/resources/db/migration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.22362556",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "430ec4893a5f43cdb87edd264f78776b",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/MyDocuments/IdeaProjects/JavaPro/Task_2/src/main/resources/db/migration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.22362556&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;430ec4893a5f43cdb87edd264f78776b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main\resources\db\migration" />
@@ -202,7 +201,7 @@
       <workItem from="1729100138521" duration="1048000" />
       <workItem from="1729505009961" duration="47799000" />
       <workItem from="1729774968627" duration="1028000" />
-      <workItem from="1729777266066" duration="31256000" />
+      <workItem from="1729777266066" duration="31955000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -360,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729861736591</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче">
+      <created>1730104937881</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730104937881</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +408,8 @@
     <MESSAGE value="Задача 6. rootUri для restTemplate ну и прочее" />
     <MESSAGE value="Задача 6. сервис Product возврат моей структуры" />
     <MESSAGE value="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс" />
+    <MESSAGE value="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

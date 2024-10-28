@@ -1,7 +1,6 @@
 package org.example.config;
 
 import lombok.Getter;
-import org.example.properties.ProductsUrl;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;

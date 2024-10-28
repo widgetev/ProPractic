@@ -1,4 +1,4 @@
-package org.example.properties;
+package org.example.config;
 
 import lombok.Getter;
 import org.springframework.stereotype.Component;
