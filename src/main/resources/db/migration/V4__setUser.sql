@@ -1,0 +1,1 @@
+update products set userid=3 where userid = 0 OR userid IS NULL ;

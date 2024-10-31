@@ -2,9 +2,9 @@ package org.example.task_4.controller;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.example.task_4.db.Product;
-import org.example.task_4.db.dto.ErrorResponse;
-import org.example.task_4.db.dto.ProductsResponse;
+import org.example.task_4.dto.ErrorResponse;
+import org.example.task_4.dto.ProductDTO;
+import org.example.task_4.dto.ProductsResponse;
 import org.example.task_4.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -52,8 +52,8 @@ public class ProductsController {
     }
 
     @PostMapping(value = "/")
-    public ProductsResponse updateProduct(@RequestBody Product product) throws SQLException {
-        log.info("update Product = " + product);
+    public ProductsResponse updateProduct(@RequestBody ProductDTO product) throws SQLException { //TODO Здесь должен быть DTO, а не Entity
+        log.info("update ProductDTO = " + product);
         return new ProductsResponse(List.of(productService.update(product)));
 
     }

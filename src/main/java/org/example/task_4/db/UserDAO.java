@@ -12,19 +12,20 @@ import java.util.List;
 import javax.sql.DataSource;
 
 @Component
+@Deprecated
 public class UserDAO {
     private final Connection connection;
 
     public UserDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
     }
-
-    public Users get(Long id ){
-        Users user = null;
+/*
+    public UsersDTO get(Long id ){
+        UsersDTO user = null;
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery("SELECT * FROM users where id=" + id);
             if(rs.next()) {
-                user = new Users(rs.getString("username"));
+                user = new UsersDTO(rs.getString("username"));
                 user.setId((long) rs.getInt("id"));
             }
             rs.close();
@@ -34,12 +35,12 @@ public class UserDAO {
         return user;
     }
 
-    public List<Users> getAll() {
-        List<Users> usersList = new ArrayList<>();
+    public List<UsersDTO> getAll() {
+        List<UsersDTO> usersList = new ArrayList<>();
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery("SELECT * FROM users ");
             while (rs.next()) {
-                Users user = new Users(rs.getString("username"));
+                UsersDTO user = new UsersDTO(rs.getString("username"));
                 user.setId((long) rs.getInt("id"));
                 usersList.add(user);
             }
@@ -50,7 +51,7 @@ public class UserDAO {
         return usersList;
     }
 
-    public void save(Users e) {
+    public void save(UsersDTO e) {
         try (Statement stmt = connection.createStatement()) {
             if (e.getId() == null) {
                 ResultSet rs = stmt.executeQuery("SELECT * FROM users where username='" + e.getUsername() + "'");
@@ -73,11 +74,11 @@ public class UserDAO {
         }
     }
 
-    public void delete(Users e) {
+    public void delete(UsersDTO e) {
         try (Statement stmt = connection.createStatement()) {
             stmt.executeUpdate("DELETE FROM users WHERE username = '" + e.getUsername() + "'", Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 }

@@ -1,18 +1,20 @@
 package org.example.task_4.db;
 
+//import org.example.task_4.db.dto.ProductDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.ResultSet;
+//import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+/*import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.List;*/
 
 @Component
+@Deprecated
 public class ProductDAO {
     private static final Logger log = LoggerFactory.getLogger(ProductDAO.class.getName());
     private final Connection connection;
@@ -21,8 +23,8 @@ public class ProductDAO {
     public ProductDAO(DataSource dataSource) throws SQLException {
         this.connection = dataSource.getConnection();
     }
-
-    public void save(Product product) {
+/*
+    public void save(ProductDTO product) {
         try (Statement stmt = connection.createStatement()) {
             //не рассматриваю когда ID есть, а имени нету
             if (product.getId() == null) {
@@ -50,8 +52,8 @@ public class ProductDAO {
         }
     }
 
-    public Product get(Long id ){
-        Product product = null;
+    public ProductDTO get(Long id ){
+        ProductDTO product = null;
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(SQL_SELECT_ALL +" where id=" + id);
             if(rs.next()) {
@@ -63,18 +65,18 @@ public class ProductDAO {
         }
         return product;
     }
-    private Product getOneProduct(ResultSet rs) throws SQLException {
-        Product pr = new Product((long) rs.getInt("id"), rs.getString("accnum")
+    private ProductDTO getOneProduct(ResultSet rs) throws SQLException {
+        ProductDTO pr = new ProductDTO((long) rs.getInt("id"), rs.getString("accnum")
                 , rs.getBigDecimal("sum")
-                , ProductType.valueOf(rs.getString("type"))
+                , ProductTypeDTO.valueOf(rs.getString("type"))
                 , rs.getLong("userid"));
         return pr;
 
     }
 
-    public List<Product> getAllBySQL(String sql) {
+    public List<ProductDTO> getAllBySQL(String sql) {
         log.info("Call getAllBySQL SQL = " + sql);
-        List<Product> productList = new ArrayList<>();
+        List<ProductDTO> productList = new ArrayList<>();
         try (Statement stmt = connection.createStatement()) {
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {;
@@ -87,25 +89,25 @@ public class ProductDAO {
         return productList;
     }
 
-    public List<Product> getByUserId(Long userId) {
+    public List<ProductDTO> getByUserId(Long userId) {
         return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId);
     }
-    public List<Product> getByAccNum(Long userId, String accnum) {
+    public List<ProductDTO> getByAccNum(Long userId, String accnum) {
         return getAllBySQL(SQL_SELECT_ALL + " where userId = " + userId + " and accnum = '" + accnum + "'");
     }
-    public Product getByProductIdUserId(Long pid, Long userId) {
-        List<Product> productsList = getAllBySQL(SQL_SELECT_ALL + " where id = "+ pid + " and userId = " + userId);
+    public ProductDTO getByProductIdUserId(Long pid, Long userId) {
+        List<ProductDTO> productsList = getAllBySQL(SQL_SELECT_ALL + " where id = "+ pid + " and userId = " + userId);
         if(productsList.size()>0)
             return productsList.get(0);
         return null;
     }
 
-    public List<Product> getAll() {
+    public List<ProductDTO> getAll() {
         return getAllBySQL(SQL_SELECT_ALL);
     }
 
     //Обновить можно только остаток. Для всего остального - создавай новый счет
-    public Product update(Product product) throws SQLException {
+    public ProductDTO update(ProductDTO product) throws SQLException {
         try (Statement stmt = connection.createStatement()) {
             stmt.executeUpdate("UPDATE products set sum = " + product.getSum() + " where id = " + product.getId(), Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException ex) {
@@ -115,11 +117,11 @@ public class ProductDAO {
         return product;
     }
 
-    public void delete(Product e) {
+    public void delete(ProductDTO e) {
         try (Statement stmt = connection.createStatement()) {
             stmt.executeUpdate("DELETE FROM products WHERE accnum = '" + e.getAccNum() + "'", Statement.RETURN_GENERATED_KEYS);
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-    }
+    }*/
 }
