@@ -30,7 +30,7 @@ public class ProductService {
         //подготовить параметр
         Map<String, String> urlParams = new HashMap<>();
         urlParams.put("uid", userId.toString());
-        return restTemplate.postForObject(config.getProductsByUserURL(), null, PaymentResponse.class,urlParams);
+        return  restTemplate.postForObject(config.getProductsByUserURL(), null, PaymentResponse.class,urlParams);
     }
 
     public PaymentResponse getProductBypPidUid(Long pid, Long uid) {

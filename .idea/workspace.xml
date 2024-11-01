@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 7. Теперь вроде все работает">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 7. Убрал лишние отладочные изменения">
       <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/service/ProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -373,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730450681975</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Задача 7. Убрал лишние отладочные изменения">
+      <created>1730450924957</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730450924957</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,7 +423,8 @@
     <MESSAGE value="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс" />
     <MESSAGE value="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче" />
     <MESSAGE value="Задача 7. Теперь вроде все работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 7. Теперь вроде все работает" />
+    <MESSAGE value="Задача 7. Убрал лишние отладочные изменения" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 7. Убрал лишние отладочные изменения" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
