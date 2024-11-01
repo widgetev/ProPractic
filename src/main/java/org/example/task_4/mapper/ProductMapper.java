@@ -8,8 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductMapper implements RequestBodyMapperInterface<ProductDTO, Product>{
 
-    ProductTypeMapper productTypeMapper;
-    UserMapper userMapper;
+    private final ProductTypeMapper productTypeMapper;
+    private final UserMapper userMapper;
+
+    public ProductMapper(ProductTypeMapper productTypeMapper, UserMapper userMapper) {
+        this.productTypeMapper = productTypeMapper;
+        this.userMapper = userMapper;
+    }
 
     @Override
     public Product map(ProductDTO request) {

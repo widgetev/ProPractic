@@ -17,7 +17,6 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-
     Users create(String username) {
         Users user = new Users();
         user.setUsername(username);
@@ -25,11 +24,6 @@ public class UserService {
         log.info("New user ID = {}", user.getId());
         return user;
     }
-
-//    void del(UsersDTO user) {
-//        userDAO.delete(user);
-//    }
-//
     Users get(Long id) {
         return userRepository.getReferenceById(id);
     }

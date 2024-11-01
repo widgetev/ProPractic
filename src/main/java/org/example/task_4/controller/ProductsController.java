@@ -52,15 +52,19 @@ public class ProductsController {
     }
 
     @PostMapping(value = "/")
-    public ProductsResponse updateProduct(@RequestBody ProductDTO product) throws SQLException { //TODO Здесь должен быть DTO, а не Entity
+    public ProductsResponse updateProduct(@RequestBody ProductDTO product) throws SQLException {
         log.info("update ProductDTO = " + product);
         return new ProductsResponse(List.of(productService.update(product)));
+    }
 
+    @PostMapping(value = "/create")
+    public ProductsResponse createProduct(@RequestBody ProductDTO product) throws SQLException {
+        log.info("create ProductDTO = " + product);
+        return new ProductsResponse(List.of(productService.create(product)));
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ErrorResponse handlerEntityNotFoundException(EntityNotFoundException e){
         return  new ErrorResponse(HttpStatus.NOT_FOUND.name(), "Продукт не найден");
     }
-
 }

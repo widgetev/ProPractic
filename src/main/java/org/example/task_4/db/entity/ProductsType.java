@@ -9,6 +9,7 @@ import lombok.Setter;
 @Table(name = "prducts_type")
 public class ProductsType {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", insertable=false, updatable=false)
     private Long id;
 

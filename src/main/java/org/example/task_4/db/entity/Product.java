@@ -2,6 +2,8 @@ package org.example.task_4.db.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 import java.math.BigDecimal;
 
@@ -11,7 +13,7 @@ import java.math.BigDecimal;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", insertable=false, updatable=false)
+    @Column(name = "id",nullable = false, insertable=false, updatable=false)
     private Long id;
     @Column(name = "accnum")
     private String accNum;
@@ -19,8 +21,10 @@ public class Product {
     private BigDecimal sum;
 
     @JoinColumn(name = "type", referencedColumnName = "id")
+    @Cascade(CascadeType.MERGE)
     @ManyToOne private ProductsType type;
     @JoinColumn(name = "userid",  referencedColumnName = "id")
+    @Cascade(CascadeType.MERGE)
     @ManyToOne private Users user;
 
 //    public ProductDTO(String accNum, BigDecimal sum, ProductsType type) {
