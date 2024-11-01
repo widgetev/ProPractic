@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 7. Убрал лишние отладочные изменения">
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 7. Комментарий к заданию">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -386,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730450950915</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Задача 7. Комментарий к заданию">
+      <created>1730451114073</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730451114073</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +439,8 @@
     <MESSAGE value="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче" />
     <MESSAGE value="Задача 7. Теперь вроде все работает" />
     <MESSAGE value="Задача 7. Убрал лишние отладочные изменения" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 7. Убрал лишние отладочные изменения" />
+    <MESSAGE value="Задача 7. Комментарий к заданию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Задача 7. Комментарий к заданию" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -27,22 +27,6 @@ public class Product {
     @Cascade(CascadeType.MERGE)
     @ManyToOne private Users user;
 
-//    public ProductDTO(String accNum, BigDecimal sum, ProductsType type) {
-//        this.accNum = accNum;
-//        this.sum = sum;
-//        this.type = type;
-//    }
-//    public ProductDTO(String accNum, BigDecimal sum, ProductsType type, Long userId) {
-//        this.accNum = accNum;
-//        this.sum = sum;
-//        this.type = type;
-//        this.userId = userId;
-//    }
-//
-//    public ProductDTO() {
-//
-//    }
-
     @Override
     public String toString() {
         return "Products{" +
