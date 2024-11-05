@@ -1,35 +1,34 @@
 package org.example.task_4.service;
 
-import org.example.task_4.db.UserDAO;
-import org.example.task_4.db.Users;
+import lombok.extern.slf4j.Slf4j;
+import org.example.task_4.db.entity.User;
+import org.example.task_4.db.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class UserService {
 
-    private final UserDAO userDAO;
+    private final UserRepository userRepository;
 
-    public UserService(UserDAO userDAO) {
-        this.userDAO = userDAO;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    Users create(String username) {
-        Users user = new Users(username);
-        userDAO.save(user);
+    User create(String username) {
+        User user = new User();
+        user.setUsername(username);
+        userRepository.save(user);
+        log.info("New user ID = {}", user.getId());
         return user;
     }
-
-    void del(Users user) {
-        userDAO.delete(user);
+    User get(Long id) {
+        return userRepository.getReferenceById(id);
     }
 
-    Users get(Long id) {
-        return userDAO.get(id);
-    }
-
-    public List<Users> getAll() {
-        return userDAO.getAll();
+    public List<User> getAll() {
+        return userRepository.findAll();
     }
 }

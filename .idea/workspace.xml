@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче">
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Обновление версии IDE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/PaymentConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service/src/main/java/org/example/properties/ProductsUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service/src/main/java/org/example/config/ProductsUrl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,6 +34,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOM0XWwc6AnFT7",
+        "number": 6
+      },
+      "lastSeen": 1730789467154
+    }
+  ]
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/widgetev/ProPractic.git",
+    "accountId": "f817719e-8b83-4796-905a-7414b39e7451"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -45,40 +69,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/MyDocuments/IdeaProjects/JavaPro/Task_2/src/main/resources/db/migration&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.22362556&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;430ec4893a5f43cdb87edd264f78776b&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "#6 on Task__7",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/MyDocuments/IdeaProjects/JavaPractic/Task_5",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.22362556",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "430ec4893a5f43cdb87edd264f78776b",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;PostgreSQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "PostgreSQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\MyDocuments\IdeaProjects\JavaPro\Task_2\src\main\resources\db\migration" />
@@ -95,11 +121,11 @@
       <recent name="org.example.dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.task_4.controller" />
+      <recent name="org.example.task_4.mapper" />
+      <recent name="org.example.task_4.db.entity" />
       <recent name="org.example.exception" />
       <recent name="org.example.properties" />
-      <recent name="org.example.task_4.controller" />
-      <recent name="org.example.task_4" />
-      <recent name="org.example.task_4.db" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -109,13 +135,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main (1)">
-    <configuration name="org.example.task_4.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.task_4.Main" />
-      <module name="poduct-service" />
+  <component name="RunManager" selected="Spring Boot.Main">
+    <configuration name="Main (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="payment-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.Main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.task_4.service.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,8 +149,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="payment-service" />
+    <configuration name="Main (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.Main" />
       <extension name="coverage">
         <pattern>
@@ -173,13 +199,21 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Main (1)" />
         <item itemvalue="Spring Boot.Main" />
+        <item itemvalue="Spring Boot.Main (2)" />
+        <item itemvalue="Spring Boot.Main (1)" />
         <item itemvalue="Docker.wiremock: Compose Deployment" />
         <item itemvalue="Docker.wiremock.wiremock-setup-core: Compose Deployment" />
-        <item itemvalue="Application.org.example.task_4.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringBootOptions">
@@ -202,6 +236,7 @@
       <workItem from="1729505009961" duration="47799000" />
       <workItem from="1729774968627" duration="1028000" />
       <workItem from="1729777266066" duration="31955000" />
+      <workItem from="1730789205540" duration="3801000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -366,7 +401,43 @@
       <option name="project" value="LOCAL" />
       <updated>1730104937881</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Задача 7. Теперь вроде все работает">
+      <created>1730450681975</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730450681975</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Задача 7. Убрал лишние отладочные изменения">
+      <created>1730450924957</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730450924957</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Задача 7. Убрал лишние отладочные изменения">
+      <created>1730450950915</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1730450950915</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Задача 7. Комментарий к заданию">
+      <created>1730451114073</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1730451114073</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Обновление версии IDE">
+      <option name="closed" value="true" />
+      <created>1730789370087</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1730789370087</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +458,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="По замечаниям с ревью" />
     <MESSAGE value="По замечаниям с ревью + warning от IDEA" />
     <MESSAGE value="Init branch Task_3" />
     <MESSAGE value="Задача 3" />
@@ -409,7 +479,11 @@
     <MESSAGE value="Задача 6. сервис Product возврат моей структуры" />
     <MESSAGE value="Задача 6. вроде все заработало.&#10;&#10;Запросы по продуктам выделил в отдельный класс" />
     <MESSAGE value="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 6. Устранена часть замечаний CR. остальное в следующей задаче" />
+    <MESSAGE value="Задача 7. Теперь вроде все работает" />
+    <MESSAGE value="Задача 7. Убрал лишние отладочные изменения" />
+    <MESSAGE value="Задача 7. Комментарий к заданию" />
+    <MESSAGE value="Обновление версии IDE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновление версии IDE" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
