@@ -25,7 +25,7 @@ public class Product {
     @ManyToOne private ProductsType type;
     @JoinColumn(name = "userid",  referencedColumnName = "id")
     @Cascade(CascadeType.MERGE)
-    @ManyToOne private Users user;
+    @ManyToOne private User user;
 
     @Override
     public String toString() {

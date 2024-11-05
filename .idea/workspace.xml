@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Задача 7. Комментарий к заданию" />
+    <list default="true" id="9cb3e492-683a-464e-aa41-6d45acffd9b6" name="Changes" comment="Обновление версии IDE">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/db/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task_4/service/UserService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,10 +35,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "widgetev"
-  }
+  "lastFilter": {}
+}]]></component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOM0XWwc6AnFT7",
+        "number": 6
+      },
+      "lastSeen": 1730789467154
+    }
+  ]
 }]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
@@ -221,7 +236,7 @@
       <workItem from="1729505009961" duration="47799000" />
       <workItem from="1729774968627" duration="1028000" />
       <workItem from="1729777266066" duration="31955000" />
-      <workItem from="1730789205540" duration="49000" />
+      <workItem from="1730789205540" duration="3801000" />
     </task>
     <task id="LOCAL-00001" summary="По замечаниям с ревью + warning от IDEA">
       <option name="closed" value="true" />
@@ -414,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730451114073</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Обновление версии IDE">
+      <option name="closed" value="true" />
+      <created>1730789370087</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1730789370087</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +458,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="По замечаниям с ревью" />
     <MESSAGE value="По замечаниям с ревью + warning от IDEA" />
     <MESSAGE value="Init branch Task_3" />
     <MESSAGE value="Задача 3" />
@@ -460,7 +482,8 @@
     <MESSAGE value="Задача 7. Теперь вроде все работает" />
     <MESSAGE value="Задача 7. Убрал лишние отладочные изменения" />
     <MESSAGE value="Задача 7. Комментарий к заданию" />
-    <option name="LAST_COMMIT_MESSAGE" value="Задача 7. Комментарий к заданию" />
+    <MESSAGE value="Обновление версии IDE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновление версии IDE" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,7 +1,7 @@
 package org.example.task_4.service;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.task_4.db.entity.Users;
+import org.example.task_4.db.entity.User;
 import org.example.task_4.db.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,18 +17,18 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    Users create(String username) {
-        Users user = new Users();
+    User create(String username) {
+        User user = new User();
         user.setUsername(username);
         userRepository.save(user);
         log.info("New user ID = {}", user.getId());
         return user;
     }
-    Users get(Long id) {
+    User get(Long id) {
         return userRepository.getReferenceById(id);
     }
 
-    public List<Users> getAll() {
+    public List<User> getAll() {
         return userRepository.findAll();
     }
 }
